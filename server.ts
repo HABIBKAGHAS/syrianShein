@@ -1,5 +1,5 @@
 import App from "./app";
 
-const app = new App([], 80);
+const app = new App([], 443);
 
 app.listen();
