@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "nodemon server/index.js",
     "start": "ts-node server.ts",
-    "gen:schema": "awk 1 ./prisma/schemas/*.prisma > ./prisma/schema.prisma && npx prisma format"
+    "gen:schema": "awk 1 ./prisma/schemas/*.prisma > ./prisma/schema.prisma && npx prisma format",
+    "startWithPM2": "tsc --project tsconfig.json &&  pm2 start dist/server.js -w --name sheinSyria"
   },
   "dependencies": {
     "body-parser": "^1.19.2",
