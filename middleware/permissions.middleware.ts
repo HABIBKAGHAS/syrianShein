@@ -1,4 +1,4 @@
-require("dotenv").config();
+import "dotenv";
 import WrongAuthenticationTokenException from "exceptions/WrongAuthenticationTokenException";
 import * as express from "express";
 

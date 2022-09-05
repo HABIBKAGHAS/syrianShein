@@ -1,8 +1,7 @@
 import NotFoundException from "../exceptions/NotFoundException";
 import * as express from "express";
-import User from "./UserModels/User";
 
-require("../utils/utils");
+import "../utils/utils";
 
 class BaseController {}
 
