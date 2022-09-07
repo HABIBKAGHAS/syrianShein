@@ -7,3 +7,59 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Cities {
+  id      Int    @id @default(autoincrement())
+  city    String
+  city_ar String
+  users   User[]
+}
+
+model Markets {
+  id      Int    @id @default(autoincrement())
+  mame_en  String
+  name_ar String
+
+  Orders Orders[]
+}
+
+model CurrencyExchange {
+  id      Int    @id @default(autoincrement())
+  price  Float
+  Posting_date DateTime
+}
+
+model Orders {
+  id      Int    @id @default(autoincrement())
+  posting_date DateTime
+  server_response String
+  status String
+  user_id Int
+  market_id Int
+  Market Markets @relation(fields: [market_id], references: [id])
+  User User @relation(fields: [user_id], references: [id])
+  OrderDetails OrderDetailsShein[]
+}
+
+model OrderDetailsShein {
+  id      Int    @id @default(autoincrement())
+  good_id BigInt 
+  cat_id BigInt
+  goods_url_name String
+  original_img String
+  quantity Int
+  sku_sale_attr String
+  order_id Int 
+  Order Orders @relation(fields: [order_id], references: [id])
+}
+
+model User {
+  id              Int     @id @default(autoincrement())
+  email           String? @unique
+  name            String
+  family          String?
+  mobile          String?
+  address_details String?
+  city_id         Int
+  City            Cities  @relation(fields: [city_id], references: [id])
+  Orders          Orders[] 
+}
