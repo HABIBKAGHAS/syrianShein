@@ -9,7 +9,7 @@ const app = new App(
     new OrdersController(),
     new CitiesController(),
   ],
-  8000
+  80
 );
 
 app.listen();
