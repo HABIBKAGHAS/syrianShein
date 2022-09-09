@@ -44,7 +44,7 @@ class UserController extends BaseController {
     next: express.NextFunction
   ) => {
     const dto: UserLoginDto = request.body;
-    const oldUser = await this.prisma.user.findUnique({
+    const oldUser: User = await this.prisma.user.findUnique({
       where: {
         mobile: dto.mobile,
       },
