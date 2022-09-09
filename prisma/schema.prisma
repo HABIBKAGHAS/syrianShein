@@ -54,10 +54,11 @@ model OrderDetailsShein {
 
 model User {
   id              Int     @id @default(autoincrement())
-  email           String? @unique
+  email           String @unique
+  password        String
   name            String
   family          String?
-  mobile          String?
+  mobile          String @unique
   address_details String?
   city_id         Int
   City            Cities  @relation(fields: [city_id], references: [id])

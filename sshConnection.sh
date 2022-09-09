@@ -1,0 +1,1 @@
+ssh -i '/Users/habibkaghas/Desktop/portfolio.pem' ec2-user@ec2-3-90-210-200.compute-1.amazonaws.com
